@@ -21,12 +21,18 @@ public class MainLoop extends AbstractMainLoop {
     private final Sprite level = StaticSprite.create(20.0f, 10.f, "./data/sprites/level.png");
     private final Matrix4f levelModel = new Matrix4f().translate(0.0f, 0.0f, -1.0f);
 
-    private final Sprite led1 = AnimatedSprite.create(10.0f, 1.0f, "./data/sprites/leds.png", List.of(800, 150, 150, 150, 150, 150, 350, 350, 350, 550, 550), AnimationType.LOOP);
+    private final Sprite led1 = AnimatedSprite.create(10.0f, 1.0f, "./data/sprites/leds.png", List.of(800, 150, 150, 150, 150, 150, 350, 350, 350, 550, 550));
     private final Sprite led2 = AnimatedSprite.create(10.0f, 1.0f, "./data/sprites/leds.png", List.of(800, 150, 150, 150, 150, 150, 350, 350, 350, 550, 550), AnimationType.ONCE);
     private final Sprite led3 = AnimatedSprite.create(10.0f, 1.0f, "./data/sprites/leds.png", List.of(800, 150, 150, 150, 150, 150, 350, 350, 350, 550, 550), AnimationType.ALTERNATING);
     private final Matrix4f ledModel1 = new Matrix4f().translate(3.0f, 5.0f, -0.5f);
     private final Matrix4f ledModel2 = new Matrix4f().translate(3.0f, 7.0f, -0.5f);
     private final Matrix4f ledModel3 = new Matrix4f().translate(3.0f, 9.0f, -0.5f);
+
+    @Override
+    protected void initialize() {
+        level.flipHorizontal();
+        led2.flipHorizontal();
+    }
 
     @Override
     protected void execute() {
