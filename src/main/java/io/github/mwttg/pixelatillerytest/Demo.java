@@ -1,22 +1,20 @@
 package io.github.mwttg.pixelatillerytest;
 
-import io.github.mwttg.pixelartillery2d.mainloop.AbstractMainLoop;
-import io.github.mwttg.pixelartillery2d.sprites.*;
+import io.github.mwttg.pixelartillery2d.*;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL41;
 
 import java.util.List;
 
-public class MainLoop extends AbstractMainLoop {
+public class Demo extends SimpleApplication {
+    private final Matrix4f projection = new Matrix4f().setOrtho(0.0f, 20.0f, 0.0f, 10.0f, 0.01f, 100.0f);
+    private final Matrix4f view = new Matrix4f().setLookAt(0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 
     private final int defaultShaderProgramId = ShaderProgram.createDefaultShader();
     private final Uniform defaultUniform = Uniform.create(defaultShaderProgramId);
 
     private final int customShaderProgramId = ShaderProgram.createFrom("./data/shaders/vertex.glsl", "./data/shaders/fragment.glsl");
     private final Uniform customUniform = Uniform.create(customShaderProgramId);
-
-    private final Matrix4f view = Configuration.createViewMatrix();
-    private final Matrix4f projection = Configuration.createProjectionMatrix();
 
     private final Sprite level = StaticSprite.create(20.0f, 10.f, "./data/sprites/level.png");
     private final Matrix4f levelModel = new Matrix4f().translate(0.0f, 0.0f, -1.0f);
@@ -28,6 +26,10 @@ public class MainLoop extends AbstractMainLoop {
     private final Matrix4f ledModel2 = new Matrix4f().translate(3.0f, 7.0f, -0.5f);
     private final Matrix4f ledModel3 = new Matrix4f().translate(3.0f, 9.0f, -0.5f);
 
+    protected Demo() {
+        super("Pixel ARTillery 2D Test", 1920, 1080);
+    }
+
     @Override
     protected void initialize() {
         level.flipHorizontal();
@@ -35,7 +37,7 @@ public class MainLoop extends AbstractMainLoop {
     }
 
     @Override
-    protected void execute() {
+    protected void gameLoop() {
         GL41.glUseProgram(customShaderProgramId);
         level.draw(customUniform, levelModel, view, projection);
 
