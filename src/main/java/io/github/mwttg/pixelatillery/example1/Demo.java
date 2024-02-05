@@ -1,12 +1,12 @@
-package io.github.mwttg.pixelatillerytest;
+package io.github.mwttg.pixelatillery.example1;
 
-import io.github.mwttg.pixelartillery2d.*;
+import io.github.mwttg.pixelartillery2d.graphic.*;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL41;
 
 import java.util.List;
 
-public class Demo extends SimpleApplication {
+public class Demo extends SimpleGraphicApplication {
     private final Matrix4f projection = new Matrix4f().setOrtho(0.0f, 20.0f, 0.0f, 10.0f, 0.01f, 100.0f);
     private final Matrix4f view = new Matrix4f().setLookAt(0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 

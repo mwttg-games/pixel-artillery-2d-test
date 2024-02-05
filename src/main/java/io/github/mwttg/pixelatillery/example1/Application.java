@@ -1,5 +1,8 @@
-package io.github.mwttg.pixelatillerytest;
+package io.github.mwttg.pixelatillery.example1;
 
+/**
+ * Example for using the library Pixel ARTillery 2D, but only for graphics (OpenGL)
+ */
 public class Application {
 
     public static void main(String[] args) {
