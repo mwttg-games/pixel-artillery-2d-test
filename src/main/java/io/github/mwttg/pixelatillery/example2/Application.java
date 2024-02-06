@@ -8,7 +8,7 @@ public class Application {
 
     public static void main(String[] args) throws InterruptedException {
         SoundDevice.initialize();
-        // SoundListener exits by default, to manipulate it use the class SoundListener
+        // SoundListener exists by default, to manipulate it use the class SoundListener
 
         final var sound = Sound.create("./data/sound/jump.wav", true);
         var position = new Vector3f(-10.0f, 0.0f, -5.0f);
