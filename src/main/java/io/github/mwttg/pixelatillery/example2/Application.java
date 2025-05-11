@@ -4,6 +4,9 @@ import io.github.mwttg.pixelartillery2d.sound.Sound;
 import io.github.mwttg.pixelartillery2d.sound.SoundDevice;
 import org.joml.Vector3f;
 
+/**
+ * Example for using the library 'Pixel ARTillery 2D', for playing sounds.
+ */
 public class Application {
 
     public static void main(String[] args) throws InterruptedException {

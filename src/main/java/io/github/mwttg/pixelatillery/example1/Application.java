@@ -1,7 +1,7 @@
 package io.github.mwttg.pixelatillery.example1;
 
 /**
- * Example for using the library Pixel ARTillery 2D, but only for graphics (OpenGL)
+ * Example for using the library 'Pixel ARTillery 2D', for rendering static and animated sprites.
  */
 public class Application {
 
