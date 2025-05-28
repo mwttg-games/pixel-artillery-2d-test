@@ -14,5 +14,8 @@ An example to show how to play sounds.
 
 An example to show how to render one sprite multiple times (instanced static sprite) on a background.
 
+## Example 4
+
+An example to show how to render instanced particles (planes with colors).
 
 [lib]: https://github.com/mwttg/pixel-artillery-2d
